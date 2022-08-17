@@ -1,5 +1,10 @@
 import httpx
-response = httpx.get("https://wordfeud.aasmul.net/Account/Login.aspx")
+import yaml
+
+with open("scrape.yaml") as stream:
+    config = yaml.safe_load(stream)
+
+response = httpx.get(config['url1'])
 html = response.text
 metadata = response.headers
 print(html)
