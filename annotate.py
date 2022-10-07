@@ -33,3 +33,23 @@ while move != 'quit':
 
 print(movesA)
 print(movesB)
+
+# class to encapsulate a single move (word,rack,board position,score)
+class Move:
+    def __init__(self, word, score):
+        self.word = word
+        self.score = score
+
+m1 = Move("hex", 26)
+
+print(m1.word)
+print(m1.score)
+MovesC = []
+MovesC.append(m1)
+
+m2 = Move("chalazal", 74)
+
+MovesC.append(m2)
+
+for x in MovesC:
+    print(x.word,x.score)
